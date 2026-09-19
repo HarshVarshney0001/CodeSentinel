@@ -109,7 +109,7 @@ For CI/CD, add `GH_TOKEN` and `GROQ_API_KEY` as repository secrets in the target
 - **Retry logic** — gracefully handles occasional malformed LLM tool-call outputs without crashing the pipeline
 - **AST-based chunking with fallback** — falls back to whole-file chunking when syntax errors prevent AST parsing, ensuring no code is silently dropped from the RAG index
 
-- ## 📄 About
+## 📄 About
 
 This project was built as a hands-on learning and portfolio project to explore agentic AI system design — combining LLM-based code review, Retrieval-Augmented Generation (RAG), multi-step agent orchestration (LangGraph & MCP), and CI/CD automation into a single end-to-end working system.
 
