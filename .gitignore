@@ -3,4 +3,6 @@
 __pycache__/
 *.pyc
 ground_truth.md
+ground_truth.py
 chroma_db/
+agent_output.txt
