@@ -302,9 +302,14 @@ def build_graph():
 if __name__ == "__main__":
     app = build_graph()
 
+    # CI/CD mein PR number aur branch environment variables se aayenge.
+    # Local testing ke liye fallback values bhi rakhe hain.
+    pr_number = int(os.getenv("PR_NUMBER", 2))
+    branch_name = os.getenv("PR_BRANCH", "HarshVarshney0001-patch-1")
+
     initial_state: ReviewState = {
-        "pr_number": 2,
-        "branch": "HarshVarshney0001-patch-1",
+        "pr_number": pr_number,
+        "branch": branch_name,
         "diff": None,
         "changed_files": None,
         "diff_review": None,
@@ -316,7 +321,7 @@ if __name__ == "__main__":
         "comment_url": None,
     }
 
-    print("Running the LangGraph pipeline...\n")
+    print(f"Running the LangGraph pipeline for PR #{pr_number} on branch '{branch_name}'...\n")
     final_state = app.invoke(initial_state)
 
     print("\n" + "=" * 70)
